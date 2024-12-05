@@ -1,14 +1,34 @@
 const { Schema, model } = require("mongoose");
 
+//schema
 const tvshowSchema = new Schema({
-  title: String,
-  creator: String,
-  premiere_year: Number,
+  title: {
+    type: String,
+    required: true,
+  },
+  creator: {
+    type: String,
+    required: true,
+  },
+  premiere_year: {
+    type: Number,
+    required: true,
+  },
   end_year: Number,
-  seasons: Number,
-  genre: String,
-  rating: Number,
+  seasons: {
+    type: Number,
+    required: true,
+  },
+  genre: {
+    type: String,
+    required: true,
+  },
+  rating: {
+    type: Number,
+    required: true,
+  },
 });
 
+//schema -> model
 const Tvshow = model("Tvshow", tvshowSchema);
-module.exports = Tvshow;
+module.exports = Tvshow; //export
